@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Upload</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div> 
+        <%- include('partials/navbar') %>
+        <form id="uploadForm" action="/allstudents" method="post" onsubmit="return validateForm()">
+            <div class="upload">
+                <h2 align="center" style="padding-top: 10px;">Student Details</h2>
+                <div class="udetails">
+                    <label for="usid">Student Id</label>
+                    <input type="text" id="usid" name="s_id" required>
+                </div>
+                <div class="udetails">
+                    <label for="uname">Student Name</label>
+                    <input type="text" id="uname" name="s_name" required>
+                </div>
+                <div class="sel">
+                    <label for="branch">Select Branch</label>
+                    <select id="branch" name="s_branch" required>
+                        <option value="">Select Branch</option>
+                        <option value="it">IT</option>
+                        <option value="cse">CSE</option>
+                        <option value="eee">EEE</option>
+                        <option value="ece">ECE</option>
+                    </select>
+                </div>
+                <div class="marks">
+                    <div class="tenth">
+                        <label for="ten">10th Marks</label>
+                        <input type="number" id="ten" name="s_10thmarks" required>
+                    </div>
+                    <div class="inter">
+                        <label for="int">Inter Marks</label>
+                        <input type="number" id="int" name="s_intermarks" required>
+                    </div>
+                    <div class="cgpa">
+                        <label for="cgp">CGPA</label>
+                        <input type="number" id="cgp" step="0.01" name="s_cgpa" required>
+                    </div>
+                </div>
+                <div class="udetails">
+                    <label for="achieve">Achievements</label>
+                    <textarea id="achieve" cols="40" rows="3" name="s_achievements" required></textarea>
+                </div>
+                <div class="udetails">
+                    <label for="pro">Projects</label>
+                    <textarea id="pro" cols="40" rows="3" name="s_projects" required></textarea>
+                </div>
+                <div class="udetails">
+                    <label for="interest">Interests</label>
+                    <textarea id="interest" cols="40" rows="3" name="s_interests" required></textarea>
+                </div>
+                <input id="ubut" type="submit" value="Upload">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var usid = document.getElementById("usid").value;
+            var uname = document.getElementById("uname").value;
+            var branch = document.getElementById("branch").value;
+            var ten = document.getElementById("ten").value;
+            var int = document.getElementById("int").value;
+            var cgp = document.getElementById("cgp").value;
+            var achieve = document.getElementById("achieve").value;
+            var pro = document.getElementById("pro").value;
+            var interest = document.getElementById("interest").value;
+
+            // Simple validation for demonstration
+            if (usid.trim() === "") {
+                alert("Please enter your student ID.");
+                return false;
+            }
+            if (uname.trim() === "") {
+                alert("Please enter your student name.");
+                return false;
+            }
+            if (branch === "") {
+                alert("Please select your branch.");
+                return false;
+            }
+            if (ten.trim() === "") {
+                alert("Please enter your 10th marks.");
+                return false;
+            }
+            if (int.trim() === "") {
+                alert("Please enter your inter marks.");
+                return false;
+            }
+            if (cgp.trim() === "") {
+                alert("Please enter your CGPA.");
+                return false;
+            }
+            if (achieve.trim() === "") {
+                alert("Please enter your achievements.");
+                return false;
+            }
+            if (pro.trim() === "") {
+                alert("Please enter your projects.");
+                return false;
+            }
+            if (interest.trim() === "") {
+                alert("Please enter your interests.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

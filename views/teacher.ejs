@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .osbranch{
+            margin-top: 2rem;
+        }
+        
+        .slogin{
+    height: 26rem;
+    width: 35rem;
+    background-color: whitesmoke;
+
+    font-size: 1.5rem;
+}
+
+/* .slogin input{
+    height: 2.5rem;
+    width: 10rem;
+} */
+.slogin label{
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+}
+.osbranch input{
+    height: 2.5rem;
+    width: 10rem;
+     margin-left: 20px; 
+    /* padding-left: 50px; */
+}
+.ossid{
+
+    margin-top: 2rem;
+    
+}
+.ospass{
+    margin-top: 2rem;
+}
+    </style>
+</head>
+<body>
+    <div class="block" style="height: 900px;">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <form class="oslogin" action="/teacher_login" method="post">
+        <div class="slogin">
+            <h2 align="center">Teacher Login</h2>
+            <div class="osid">
+                <label for="ssid">Teacher Id</label>
+                <input type="text" id="ssid" value="" name="t_id" required>
+            </div>
+            <div class="osbranch">
+                <label for="ssbranch">Teacher Branch</label>
+                <input type="text" id="ssbranch" value="" name="t_branch" required>
+            </div>
+            
+            <div class="ospass">
+                <label for="spass">Password</label>
+                <input type="password" id="spass" value="" name="t_pass" required>  
+            </div>
+            <input id="sbut" type="submit" value="Sign in">
+            
+        </div>
+    </form>
+    </div>
+    <script>
+        function validateForm() {
+            var teacherId = document.getElementById("ssid").value;
+            var password = document.getElementById("spass").value;
+            
+            // Simple validation for demonstration
+            if (teacherId.trim() === "") {
+                alert("Please enter your teacher ID.");
+                return false;
+            }
+            if (password.trim() === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

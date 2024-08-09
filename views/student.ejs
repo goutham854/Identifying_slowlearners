@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="block" style="height: 900px;">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <form class="oslogin" action="/student_login" method="post" onsubmit="return validateForm()">
+        <div class="slogin">
+            <h2 align="center">Student Login</h2>
+            <div class="osid">
+                <label for="ssid">Student Id</label>
+                <input type="text" id="ssid" value="" name="s_id" required>
+            </div>
+            <div class="ospass">
+                <label for="spass">Password</label>
+                <input type="password" id="spass" value="" name="s_pass" required>  
+            </div>
+            <input id="sbut" type="submit" value="Sign in">
+        </div>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var studentId = document.getElementById("ssid").value;
+            var password = document.getElementById("spass").value;
+            
+            // Simple validation for demonstration
+            if (studentId.trim() === "") {
+                alert("Please enter your student ID.");
+                return false;
+            }
+            if (password.trim() === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

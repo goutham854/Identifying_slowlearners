@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations/c2</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+         .block{
+            height: 100%;
+            background-color: white;
+
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            
+            color: black;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        
+        .recom{
+            padding-left: 40px;
+        }
+        li{
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <div class="recom">
+            <h1 style="padding-left: 400px; font-size: 40px;">Daily Tasks</h1>
+            <h2>LeetCode Problems of the day</h2>
+    <ul>
+        <% problems.forEach(problem => { %>
+            <li>
+                <h3><a href="<%= problem.url %>" target="_blank"><%= problem.title %></a></h3>
+                <p><%= problem.statement %></p>
+            </li>
+        <% }); %>
+    </ul>
+    <h2>Quizes for practice</h2>
+    <ul>
+        <% Quizes.forEach(quiz => { %>
+            <li>
+                <h3><%= quiz.title %>  QUIZ</h3>
+                <p style="font-size: 20px;"><a href="<%= quiz.url %>" target="_blank">Click Here</a></p>
+            </li>
+        <% }); %>
+    </ul>
+    <h2>Advanced Topics and Tutorials:</h2>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/fundamentals-of-algorithms/" target="_blank">GeeksforGeeks - Algorithms</a></li>
+        <li><a href="https://www.coursera.org/specializations/algorithms" target="_blank">Coursera - Algorithms Specialization</a></li>
+        <li><a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank">Khan Academy - Algorithms</a></li>
+    </ul>
+    <h2>Coding Challenges:</h2>
+    <ul>
+        <li><a href="https://www.hackerrank.com/" target="_blank">HackerRank</a></li>
+        <li><a href="https://codeforces.com/" target="_blank">Codeforces</a></li>
+        <li><a href="https://www.codechef.com/" target="_blank">CodeChef</a></li>
+    </ul>
+        </div>
+        
+    </div>
+</body>
+</html>

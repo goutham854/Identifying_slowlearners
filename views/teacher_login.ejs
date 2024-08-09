@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboars</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        th {
+            border: 1px solid black;
+        }
+        .showt a{
+            display: inline;
+            font-size: 30px;
+        }
+        .showt{
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <h1 style="text-align: center;font-size: 50px;text-transform: uppercase;"><%= teacher.t_branch %> Department</h1>
+        
+        <div class="showt">
+        <a style="padding-left: 10px;">Your Name : <%= teacher.t_name %></a>
+        <a style="padding-left: 800px;">Your Id : <%= teacher.t_id %></a>
+        </div>
+        <table style="width: 100%;" border="3" bordercolor="black" cellspacing="2" cellpadding="10">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>10th marks</th>
+                <th>Inter marks</th>
+                <th>CGPA</th>
+                <th>Achievements</th>
+                <th>Projects</th>
+                <th>Interests</th>
+                
+            </tr>
+
+            <% for (var student of students) { %>
+                <tr>
+                    <td><%= student.s_id %></td>
+                    <td><%= student.s_name %></td>
+                    <td><%= student.s_branch %></td>
+                    <td><%= student.s_10thmarks %></td>
+                    <td><%= student.s_intermarks %></td>
+                    <td><%= student.s_cgpa %></td>
+                    <td><%= student.s_achievements %></td>
+                    <td><%= student.s_projects %></td>
+                    <td><%= student.s_interests %></td>
+                    
+                </tr>
+            <% } %>
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suggestions</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .box{
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+        }
+        .box1{
+            width: 25%;
+            height: 200px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+        p{
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <h1 style="text-align: center;font-size: 50px;">Some Suggestions</h1>
+        <div class="box">
+            <% for(var contact of contacts){ %>
+            <div class="box1">
+                <h2 style="text-align: center;">Name : <%= contact.name %></h2>
+                <p><b>GMail :</b><%= contact.email %></p>
+                <p><b>suggestions :</b><%= contact.message %></p>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

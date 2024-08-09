@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations/c1</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .block{
+            height: 100%;
+            background-color: white;
+
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: black;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .recom{
+            display: flex;
+            
+        }
+        .rec{
+            padding-left: 40px;
+        }
+        li{
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <div class="recom">
+        <div class="rec">
+            <h1 style="text-align: center; font-size: 40px;">Daily Tasks</h1>
+    <h2>LeetCode Problems of the day</h2>
+    <ul>
+        <% problems.forEach(problem => { %>
+            <li>
+                <h3><a href="<%= problem.url %>" target="_blank"><%= problem.title %></a></h3>
+                <p><%= problem.statement %></p>
+            </li>
+        <% }); %>
+    </ul>
+    
+    <h2>Project Ideas for Students:</h2>
+    <ul>
+        <% projects.forEach(project => { %>
+            <li>
+                <h3><%= project.title %></h3>
+                <p><%= project.statement %></p>
+            </li>
+        <% }); %>
+    </ul>
+
+    <h2>Advanced Topics and Tutorials:</h2>
+    <ul>
+        <li><a href="https://www.geeksforgeeks.org/fundamentals-of-algorithms/" target="_blank">GeeksforGeeks - Algorithms</a></li>
+        <li><a href="https://www.coursera.org/specializations/algorithms" target="_blank">Coursera - Algorithms Specialization</a></li>
+        <li><a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank">Khan Academy - Algorithms</a></li>
+    </ul>
+
+    <h2>Coding Challenges:</h2>
+    <ul>
+        <li><a href="https://www.hackerrank.com/" target="_blank">HackerRank</a></li>
+        <li><a href="https://codeforces.com/" target="_blank">Codeforces</a></li>
+        <li><a href="https://www.codechef.com/" target="_blank">CodeChef</a></li>
+    </ul>
+
+    <h2>Interview Questions:</h2>
+    <ul>
+        <li><a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/" target="_blank">LeetCode - Top Interview Questions (Easy)</a></li>
+        <li><a href="https://leetcode.com/explore/interview/card/top-interview-questions-medium/" target="_blank">LeetCode - Top Interview Questions (Medium)</a></li>
+        <li><a href="https://leetcode.com/explore/interview/card/top-interview-questions-hard/" target="_blank">LeetCode - Top Interview Questions (Hard)</a></li>
+    </ul>
+
+    <h2>Mock Interviews:</h2>
+    <ul>
+        <li><a href="https://www.pramp.com/" target="_blank">Pramp - Free Mock Interviews</a></li>
+        <li><a href="https://www.interviewing.io/" target="_blank">interviewing.io - Practice Interviews with Engineers from Top Companies</a></li>
+        <li><a href="https://www.hiredintech.com/classrooms/system-design" target="_blank">Hired In Tech - System Design Interviews</a></li>
+    </ul>
+
+    
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+

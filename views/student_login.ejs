@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+        }
+        .box{
+            margin-top: 20px;
+            margin: auto;
+            margin-left: 200px;
+            font-size: 30px;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .tasks{
+            margin-left: 200px;
+            margin-top: 50px;
+            font-size: 30px;
+        }
+        .tasks a{
+            text-decoration: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="top">
+            <div id="logo"><img src="/images/image.png" alt="Vasavi College of Engineering" width="110"></div>
+            <div id="clg">Vasavi College Of Engineering</div>
+        </div>
+        <%- include('partials/navbar') %>
+        <div class="box">
+            <table border="1" style="width: 80%; cellpadding:9px; cellspacing:6px;">
+                <caption cols="2"><h1>Your Details</h1></caption>
+                
+                <tr>
+                    <td>Id</td>
+                    <td><%= student.s_id %></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><%= student.s_name %></td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td><%= student.s_branch %></td>
+                </tr>
+                <tr>
+                    <td>10th Marks</td>
+                    <td><%= student.s_10thmarks %></td>
+                </tr>
+                <tr>
+                    <td>Inter Marks</td>
+                    <td><%= student.s_intermarks %></td>
+                </tr>
+                <tr>
+                    <td>CGPA</td>
+                    <td><%= student.s_cgpa %></td>
+                </tr>
+                <tr>
+                    <td>Achievements</td>
+                    <td><%= student.s_achievements %></td>
+                </tr>
+                <tr>
+                    <td>Projects</td>
+                    <td><%= student.s_projects %></td>
+                </tr>
+                <tr>
+                    <td>Interests</td>
+                    <td><%= student.s_interests%></td>
+                </tr>
+            </table>
+                     
+        </div>
+        <div class="tasks">
+            <% if(total >= 90) { %>
+                <a href="/topper" class="topper">Your Daily Tasks</a>
+            <% } else if(total >= 70) { %>
+                <a href="/average" class="average">Your Daily Tasks</a>
+            <% } else { %>
+                <a href="/slow" class="slow">Your Daily Tasks</a>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+</html>
